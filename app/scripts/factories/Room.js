@@ -2,9 +2,9 @@
     function Room($scope, $firebaseArray) {
         var firebaseRef = new Firebase("https://bloc-chat-ce46d.firebaseio.com");
         
-        $scope.rooms = $firebaseArray(firebaseRef.child('rooms'));
+        var rooms = $firebaseArray(firebaseRef.child('rooms'));
         
-        $scope.addRoom = function() {
+        $scope.addRoom = function(newRoomName) {
             $scope.rooms.$add({
                 name: $scope.newRoomName
             });
