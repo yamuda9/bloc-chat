@@ -11,17 +11,15 @@
                 url: '/',
                 controller: 'HomeCtrl as home',
                 templateUrl: '/templates/home.html'
+            })
+            .state('rooms', {
+                url: '/rooms',
+                controller: 'RoomCtrl as rooms',
+                templateUrl: '/templates/rooms.html'
             });
     }
     
-    /* function FirebaseCtrl($scope, $firebaseObject) {
-        var ref = new Firebase("https://bloc-chat-ce46d.firebaseio.com");
-  
-        $scope.data = $firebaseObject(ref);
-    }
-    */
     angular
         .module('blocChat', ['ui.router'])
-        // .controller('FirebaseCtrl', ['$scope', '$firebaseObject', FirebaseCtrl])
         .config(config);
 })();
