@@ -1,23 +1,21 @@
 (function() {
-    function Room($scope, $firebaseArray) {
+    function Room($firebaseArray) {
         var firebaseRef = new Firebase("https://bloc-chat-ce46d.firebaseio.com");
         
         var rooms = $firebaseArray(firebaseRef.child('rooms'));
         
-        $scope.addRoom = function(newRoomName) {
-            $scope.rooms.$add({
-                name: $scope.newRoomName
-            });
-        };
+        var getRooms = function() {
+            return rooms;
+        }
         
         return {
-            all: rooms
+            getRooms: getRooms
         };
     }
 
     angular
         .module('blocChat')
-        .factory('Room', ['$scope', '$firebaseArray', Room]);
+        .factory('Room', ['$firebaseArray', Room]);
 })();
 
 //[
