@@ -1,6 +1,6 @@
 (function() {
     function RoomCtrl($scope, $uibModal, Room) {
-        $scope.rooms = Room.all;
+        $scope.rooms = Room;
         
         $scope.open = function() {
             $uibModal.open({
@@ -8,6 +8,8 @@
                 controller: 'ModalInstanceCtrl'
             })
         };
+        
+        return $scope.rooms;
     }
     
     angular

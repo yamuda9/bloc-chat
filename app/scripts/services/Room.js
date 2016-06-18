@@ -4,12 +4,8 @@
         
         var rooms = $firebaseArray(firebaseRef.child('rooms'));
         
-        var getRooms = function() {
-            return rooms;
-        }
-        
         return {
-            getRooms: getRooms
+            rooms
         };
     }
 
