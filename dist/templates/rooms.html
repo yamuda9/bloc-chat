@@ -30,7 +30,7 @@
 <div class="chat-message-container">
     <h1>{{ currentRoom.name }}</h1>
     <div class="chat-message-messages" ng-repeat="message in messages">
-        {{ message.username }} ({{ message.sentAt }})
+        {{ message.username }} @ {{ message.sentAt | date:'y MMM dd, hh:mm:ss a' }}
         <br/>
         - {{ message.content }}
     </div>
